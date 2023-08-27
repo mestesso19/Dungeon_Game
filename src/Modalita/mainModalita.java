@@ -32,6 +32,7 @@ public class mainModalita extends JFrame{
         setSize(new Dimension(DIM_FRAME_MODALITA));
         setLocationRelativeTo(null);
         setUndecorated(true);
+        setAlwaysOnTop(true);
     }
     
 }

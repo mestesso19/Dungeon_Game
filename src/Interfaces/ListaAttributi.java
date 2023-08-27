@@ -9,4 +9,11 @@ public interface ListaAttributi {
     public final int objectSize = 100;
     public final int speed = 5;
     
+    public static char tsSu = 'W';
+    public static char tsGiu = 'S';
+    public static char tsDx = 'D';
+    public static char tsSx = 'A';
+    public static char tsAtt = ' ';
+    public static char tsMap = 'F';
+    public static char tsOgg = 'E';
 }

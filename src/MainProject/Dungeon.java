@@ -12,7 +12,12 @@ public class Dungeon {
     private static mainMenu m;
     private static Gioco g;
     
-    public static void main(String[] args) {        
+    public static char [] tasti;
+    public static int numTasti = 7;
+    
+    public static void main(String[] args){
+        setTasti();
+        
         m = new mainMenu();
         m.setVisible(true);
     }
@@ -40,6 +45,18 @@ public class Dungeon {
         m = new mainMenu();
         m.setVisible(true);
         panelMenu.flag = 0;
+    }
+    
+    public static void setTasti(){
+        tasti = new char[numTasti];
+        
+        tasti[0] = ListaAttributi.tsSu;
+        tasti[1] = ListaAttributi.tsGiu;
+        tasti[2] = ListaAttributi.tsDx;
+        tasti[3] = ListaAttributi.tsSx;
+        tasti[4] = ListaAttributi.tsAtt;
+        tasti[5] = ListaAttributi.tsMap;
+        tasti[6] = ListaAttributi.tsOgg;
     }
     
 }

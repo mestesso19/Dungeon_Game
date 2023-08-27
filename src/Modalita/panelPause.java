@@ -92,14 +92,14 @@ public class panelPause extends JPanel implements ActionListener{
             o.setVisible(true);
         }
         else if(e.getSource() == menu){
-            int num = JOptionPane.showOptionDialog(null, "I progressi che hai fatto fino ad adesso verranno cancellati\n                     Sei sicuro di voler continuare?", "", 0, 1, null, optionsAgg, optionsAgg[0]);
+            int num = JOptionPane.showOptionDialog(this, "I progressi che hai fatto fino ad adesso verranno cancellati\n                     Sei sicuro di voler continuare?", "", 0, 1, null, optionsAgg, optionsAgg[0]);
             if(num == 0){
                 Dungeon.quitGame();
                 Dungeon.restartMenu();
             }
         }
         else if(e.getSource() == quit){
-            int num = JOptionPane.showOptionDialog(null, "I progressi che hai fatto fino ad adesso verranno cancellati\n                     Sei sicuro di voler continuare?", "", 0, 1, null, optionsAgg, optionsAgg[0]);
+            int num = JOptionPane.showOptionDialog(this, "I progressi che hai fatto fino ad adesso verranno cancellati\n                     Sei sicuro di voler continuare?", "", 0, 1, null, optionsAgg, optionsAgg[0]);
             if(num == 0)
                 Dungeon.quitGame();
         }

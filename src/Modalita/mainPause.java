@@ -16,12 +16,13 @@ public class mainPause extends JFrame{
     
     public mainPause(){
         p = new panelPause();
-
+        
         add(p);
         setTitle("Pause");
         setSize(new Dimension(DIM_FRAME_PAUSE));
         setLocationRelativeTo(null);
         setUndecorated(true);
+        setAlwaysOnTop(true);
     }
     
 }

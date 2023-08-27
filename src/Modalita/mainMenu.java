@@ -18,7 +18,6 @@ public class mainMenu extends JFrame{
     private panelMenu p;
     
     public mainMenu(){
-
         p = new panelMenu();
 
         add(p);

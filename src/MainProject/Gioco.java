@@ -97,7 +97,7 @@ public class Gioco extends JFrame implements Runnable, KeyListener, ListaAttribu
                 if(delta >= 1){
                     update();
                     printAttacco++;
-
+                    
                     repaint();
 
                     delta--;
@@ -159,7 +159,7 @@ public class Gioco extends JFrame implements Runnable, KeyListener, ListaAttribu
         g2D.dispose();
         
     }
-
+    
     @Override
     public void keyTyped(KeyEvent e) {
 
@@ -170,42 +170,43 @@ public class Gioco extends JFrame implements Runnable, KeyListener, ListaAttribu
         
         tasto = e.getKeyCode();
         
-        if(tasto == KeyEvent.VK_W){
+        if(tasto == Dungeon.tasti[0]){
             wPressed = true;
         }
-        if(tasto == KeyEvent.VK_A){
+        if(tasto == Dungeon.tasti[3]){
             aPressed = true;
         }
-        if(tasto == KeyEvent.VK_S){
+        if(tasto == Dungeon.tasti[1]){
             sPressed = true;
         }
-        if(tasto == KeyEvent.VK_D){
+        if(tasto == Dungeon.tasti[2]){
             dPressed = true;
         }
-        if(tasto == ' '){
+        if(tasto == Dungeon.tasti[4]){
             spacePressed = true;
             printAttacco = 0;
         }
-        if(tasto == 'E'){
+        if(tasto == Dungeon.tasti[6]){
             int result = stanze.controlloChest(umano);
             if(result != -1)
                 umano.chiaveTrovata();
             stanze.controlloSerratura(umano);
         }
-        if(tasto == 'G')
+        if(tasto == 'G'){
             stanze.setChiavi();
+        }
         if(e.getKeyCode() == 27){
             p = new mainPause();
             p.setVisible(true);
-            this.pause = false;
+            pause = false;
         }
-        if(tasto == 'F'){
+        if(tasto == Dungeon.tasti[5]){
             if(fPressed == false){
-                this.pause = false;
+                pause = false;
                 fPressed = true;
             }
             else if(fPressed == true){
-                this.pause = true;
+                pause = true;
                 fPressed = false;
             }
         }
@@ -216,25 +217,19 @@ public class Gioco extends JFrame implements Runnable, KeyListener, ListaAttribu
         
         int tasto = e.getKeyCode();
         
-        if(tasto == KeyEvent.VK_W){
+        if(tasto == Dungeon.tasti[0])
             wPressed = false;
-        }
-        if(tasto == KeyEvent.VK_A){
+        if(tasto == Dungeon.tasti[3])
             aPressed = false;
-        }
-        if(tasto == KeyEvent.VK_S){
+        if(tasto == Dungeon.tasti[1])
             sPressed = false;
-        }
-        if(tasto == KeyEvent.VK_D){
+        if(tasto == Dungeon.tasti[2])
             dPressed = false;
-        }
         
     }
     
-    public static void setValue(int l, int m, int FPS){
+    public static void setValue(int l){
         luminosita = l;
-        musica = m;
-        Gioco.FPS = FPS;
     }
     
     public static void stopPause(){
